@@ -1,0 +1,1064 @@
+/*
+ * FullCalendar v1.5.4 Stylesheet
+ *
+ * Copyright (c) 2011 Adam Shaw
+ * Dual licensed under the MIT and GPL licenses, located in
+ * MIT-LICENSE.txt and GPL-LICENSE.txt respectively.
+ *
+ * Date: Tue Sep 4 23:38:33 2012 -0700
+ *
+ */
+
+
+.fc {
+	direction: ltr;
+	text-align: left;
+	}
+	
+.fc table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+	
+html .fc,
+.fc table {
+	font-size: 1em;
+	}
+	
+.fc td,
+.fc th {
+	padding: 0;
+	vertical-align: top;
+	}
+
+
+
+/* Header
+------------------------------------------------------------------------*/
+
+.fc-header td {
+	white-space: nowrap;
+	}
+
+.fc-header-left {
+	width: 25%;
+	text-align: left;
+	}
+	
+.fc-header-center {
+	text-align: center;
+	}
+	
+.fc-header-right {
+	width: 25%;
+	text-align: right;
+	}
+	
+.fc-header-title {
+	display: inline-block;
+	vertical-align: top;
+	}
+	
+.fc-header-title h2 {
+	margin-top: 0;
+	white-space: nowrap;
+	}
+	
+.fc .fc-header-space {
+	padding-left: 10px;
+	}
+	
+.fc-header .fc-button {
+	margin-bottom: 1em;
+	vertical-align: top;
+	}
+	
+/* buttons edges butting together */
+
+.fc-header .fc-button {
+	margin-right: -1px;
+	}
+	
+.fc-header .fc-corner-right {
+	margin-right: 1px; /* back to normal */
+	}
+	
+.fc-header .ui-corner-right {
+	margin-right: 0; /* back to normal */
+	}
+	
+/* button layering (for border precedence) */
+	
+.fc-header .fc-state-hover,
+.fc-header .ui-state-hover {
+	z-index: 2;
+	}
+	
+.fc-header .fc-state-down {
+	z-index: 3;
+	}
+
+.fc-header .fc-state-active,
+.fc-header .ui-state-active {
+	z-index: 4;
+	}
+	
+	
+	
+/* Content
+------------------------------------------------------------------------*/
+	
+.fc-content {
+	clear: both;
+	}
+	
+.fc-view {
+	width: 100%; /* needed for view switching (when view is absolute) */
+	overflow: hidden;
+	}
+	
+	
+
+/* Cell Styles
+------------------------------------------------------------------------*/
+
+.fc-widget-header,    /* <th>, usually */
+.fc-widget-content {  /* <td>, usually */
+	border: 1px solid #ccc;
+	}
+	
+.fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
+	background: #ffc;
+	}
+	
+.fc-cell-overlay { /* semi-transparent rectangle while dragging */
+	background: #9cf;
+	opacity: .2;
+	filter: alpha(opacity=20); /* for IE */
+	}
+	
+
+
+/* Buttons
+------------------------------------------------------------------------*/
+
+.fc-button {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	}
+	
+.fc-state-default { /* non-theme */
+	border-style: solid;
+	border-width: 1px 0;
+	}
+	
+.fc-button-inner {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	}
+	
+.fc-state-default .fc-button-inner { /* non-theme */
+	border-style: solid;
+	border-width: 0 1px;
+	}
+	
+.fc-button-content {
+	position: relative;
+	float: left;
+	height: 1.9em;
+	line-height: 1.9em;
+	padding: 0 .6em;
+	white-space: nowrap;
+	}
+	
+/* icon (for jquery ui) */
+	
+.fc-button-content .fc-icon-wrap {
+	position: relative;
+	float: left;
+	top: 50%;
+	}
+	
+.fc-button-content .ui-icon {
+	position: relative;
+	float: left;
+	margin-top: -50%;
+	*margin-top: 0;
+	*top: -50%;
+	}
+	
+/* gloss effect */
+	
+.fc-state-default .fc-button-effect {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	}
+	
+.fc-state-default .fc-button-effect span {
+	position: absolute;
+	top: -100px;
+	left: 0;
+	width: 500px;
+	height: 100px;
+	border-width: 100px 0 0 1px;
+	border-style: solid;
+	border-color: #fff;
+	background: #444;
+	opacity: .09;
+	filter: alpha(opacity=9);
+	}
+	
+/* button states (determines colors)  */
+	
+.fc-state-default,
+.fc-state-default .fc-button-inner {
+	border-style: solid;
+	border-color: #ccc #bbb #aaa;
+	background: #F3F3F3;
+	color: #000;
+	}
+	
+.fc-state-hover,
+.fc-state-hover .fc-button-inner {
+	border-color: #999;
+	}
+	
+.fc-state-down,
+.fc-state-down .fc-button-inner {
+	border-color: #555;
+	background: #777;
+	}
+	
+.fc-state-active,
+.fc-state-active .fc-button-inner {
+	border-color: #555;
+	background: #777;
+	color: #fff;
+	}
+	
+.fc-state-disabled,
+.fc-state-disabled .fc-button-inner {
+	color: #999;
+	border-color: #ddd;
+	}
+	
+.fc-state-disabled {
+	cursor: default;
+	}
+	
+.fc-state-disabled .fc-button-effect {
+	display: none;
+	}
+	
+	
+
+/* Global Event Styles
+------------------------------------------------------------------------*/
+	 
+.fc-event {
+	border-style: solid;
+	border-width: 0;
+	font-size: .85em;
+	cursor: default;
+	}
+	
+a.fc-event,
+.fc-event-draggable {
+	cursor: pointer;
+	}
+	
+a.fc-event {
+	text-decoration: none;
+	}
+	
+.fc-rtl .fc-event {
+	text-align: right;
+	}
+	
+.fc-event-skin {
+	border-color: #36c;     /* default BORDER color */
+	background-color: #36c; /* default BACKGROUND color */
+	color: #fff;            /* default TEXT color */
+	}
+	
+.fc-event-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-style: solid;
+	border-width: 0;
+	overflow: hidden;
+	}
+	
+.fc-event-time,
+.fc-event-title {
+	padding: 0 1px;
+	}
+	
+.fc .ui-resizable-handle { /*** TODO: don't use ui-resizable anymore, change class ***/
+	display: block;
+	position: absolute;
+	z-index: 99999;
+	overflow: hidden; /* hacky spaces (IE6/7) */
+	font-size: 300%;  /* */
+	line-height: 50%; /* */
+	}
+	
+	
+	
+/* Horizontal Events
+------------------------------------------------------------------------*/
+
+.fc-event-hori {
+	border-width: 1px 0;
+	margin-bottom: 1px;
+	}
+	
+/* resizable */
+	
+.fc-event-hori .ui-resizable-e {
+	top: 0           !important; /* importants override pre jquery ui 1.7 styles */
+	right: -3px      !important;
+	width: 7px       !important;
+	height: 100%     !important;
+	cursor: e-resize;
+	}
+	
+.fc-event-hori .ui-resizable-w {
+	top: 0           !important;
+	left: -3px       !important;
+	width: 7px       !important;
+	height: 100%     !important;
+	cursor: w-resize;
+	}
+	
+.fc-event-hori .ui-resizable-handle {
+	_padding-bottom: 14px; /* IE6 had 0 height */
+	}
+	
+	
+	
+/* Fake Rounded Corners (for buttons and events)
+------------------------------------------------------------*/
+	
+.fc-corner-left {
+	margin-left: 1px;
+	}
+	
+.fc-corner-left .fc-button-inner,
+.fc-corner-left .fc-event-inner {
+	margin-left: -1px;
+	}
+	
+.fc-corner-right {
+	margin-right: 1px;
+	}
+	
+.fc-corner-right .fc-button-inner,
+.fc-corner-right .fc-event-inner {
+	margin-right: -1px;
+	}
+	
+.fc-corner-top {
+	margin-top: 1px;
+	}
+	
+.fc-corner-top .fc-event-inner {
+	margin-top: -1px;
+	}
+	
+.fc-corner-bottom {
+	margin-bottom: 1px;
+	}
+	
+.fc-corner-bottom .fc-event-inner {
+	margin-bottom: -1px;
+	}
+	
+	
+	
+/* Fake Rounded Corners SPECIFICALLY FOR EVENTS
+-----------------------------------------------------------------*/
+	
+.fc-corner-left .fc-event-inner {
+	border-left-width: 1px;
+	}
+	
+.fc-corner-right .fc-event-inner {
+	border-right-width: 1px;
+	}
+	
+.fc-corner-top .fc-event-inner {
+	border-top-width: 1px;
+	}
+	
+.fc-corner-bottom .fc-event-inner {
+	border-bottom-width: 1px;
+	}
+	
+	
+	
+/* Reusable Separate-border Table
+------------------------------------------------------------*/
+
+table.fc-border-separate {
+	border-collapse: separate;
+	}
+	
+.fc-border-separate th,
+.fc-border-separate td {
+	border-width: 1px 0 0 1px;
+	}
+	
+.fc-border-separate th.fc-last,
+.fc-border-separate td.fc-last {
+	border-right-width: 1px;
+	}
+	
+.fc-border-separate tr.fc-last th,
+.fc-border-separate tr.fc-last td {
+	border-bottom-width: 1px;
+	}
+	
+.fc-border-separate tbody tr.fc-first td,
+.fc-border-separate tbody tr.fc-first th {
+	border-top-width: 0;
+	}
+	
+	
+
+/* Month View, Basic Week View, Basic Day View
+------------------------------------------------------------------------*/
+
+.fc-grid th {
+	text-align: center;
+	}
+	
+.fc-grid .fc-day-number {
+	float: right;
+	padding: 0 2px;
+	}
+	
+.fc-grid .fc-other-month .fc-day-number {
+	opacity: 0.3;
+	filter: alpha(opacity=30); /* for IE */
+	/* opacity with small font can sometimes look too faded
+	   might want to set the 'color' property instead
+	   making day-numbers bold also fixes the problem */
+	}
+	
+.fc-grid .fc-day-content {
+	clear: both;
+	padding: 2px 2px 1px; /* distance between events and day edges */
+	}
+	
+/* event styles */
+	
+.fc-grid .fc-event-time {
+	font-weight: bold;
+	}
+	
+/* right-to-left */
+	
+.fc-rtl .fc-grid .fc-day-number {
+	float: left;
+	}
+	
+.fc-rtl .fc-grid .fc-event-time {
+	float: right;
+	}
+	
+	
+
+/* Agenda Week View, Agenda Day View
+------------------------------------------------------------------------*/
+
+.fc-agenda table {
+	border-collapse: separate;
+	}
+	
+.fc-agenda-days th {
+	text-align: center;
+	}
+	
+.fc-agenda .fc-agenda-axis {
+	width: 50px;
+	padding: 0 4px;
+	vertical-align: middle;
+	text-align: right;
+	white-space: nowrap;
+	font-weight: normal;
+	}
+	
+.fc-agenda .fc-day-content {
+	padding: 2px 2px 1px;
+	}
+	
+/* make axis border take precedence */
+	
+.fc-agenda-days .fc-agenda-axis {
+	border-right-width: 1px;
+	}
+	
+.fc-agenda-days .fc-col0 {
+	border-left-width: 0;
+	}
+	
+/* all-day area */
+	
+.fc-agenda-allday th {
+	border-width: 0 1px;
+	}
+	
+.fc-agenda-allday .fc-day-content {
+	min-height: 34px; /* TODO: doesnt work well in quirksmode */
+	_height: 34px;
+	}
+	
+/* divider (between all-day and slots) */
+	
+.fc-agenda-divider-inner {
+	height: 2px;
+	overflow: hidden;
+	}
+	
+.fc-widget-header .fc-agenda-divider-inner {
+	background: #eee;
+	}
+	
+/* slot rows */
+	
+.fc-agenda-slots th {
+	border-width: 1px 1px 0;
+	}
+	
+.fc-agenda-slots td {
+	border-width: 1px 0 0;
+	background: none;
+	}
+	
+.fc-agenda-slots td div {
+	height: 20px;
+	}
+	
+.fc-agenda-slots tr.fc-slot0 th,
+.fc-agenda-slots tr.fc-slot0 td {
+	border-top-width: 0;
+	}
+
+.fc-agenda-slots tr.fc-minor th,
+.fc-agenda-slots tr.fc-minor td {
+	border-top-style: dotted;
+	}
+	
+.fc-agenda-slots tr.fc-minor th.ui-widget-header {
+	*border-top-style: solid; /* doesn't work with background in IE6/7 */
+	}
+	
+
+
+/* Vertical Events
+------------------------------------------------------------------------*/
+
+.fc-event-vert {
+	border-width: 0 1px;
+	}
+	
+.fc-event-vert .fc-event-head,
+.fc-event-vert .fc-event-content {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	overflow: hidden;
+	}
+	
+.fc-event-vert .fc-event-time {
+	white-space: nowrap;
+	font-size: 10px;
+	}
+	
+.fc-event-vert .fc-event-bg { /* makes the event lighter w/ a semi-transparent overlay  */
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	opacity: .3;
+	filter: alpha(opacity=30);
+	}
+	
+.fc .ui-draggable-dragging .fc-event-bg, /* TODO: something nicer like .fc-opacity */
+.fc-select-helper .fc-event-bg {
+	display: none\9; /* for IE6/7/8. nested opacity filters while dragging don't work */
+	}
+	
+/* resizable */
+	
+.fc-event-vert .ui-resizable-s {
+	bottom: 0        !important; /* importants override pre jquery ui 1.7 styles */
+	width: 100%      !important;
+	height: 8px      !important;
+	overflow: hidden !important;
+	line-height: 8px !important;
+	font-size: 11px  !important;
+	font-family: monospace;
+	text-align: center;
+	cursor: s-resize;
+	}
+	
+.fc-agenda .ui-resizable-resizing { /* TODO: better selector */
+	_overflow: hidden;
+	}
+	
+
+	
+/* @group Yabdab Styles */	
+	
+ 
+#dateloom-page9 {
+	width:99%;
+} 
+
+#dateloom-page9 .yddl-fail
+{    
+    background-color: #D82741;
+    background: -webkit-gradient(linear, left top, left bottom, from(#E84B6E), to(#D82741) );
+    background: -moz-linear-gradient(-90deg, #E84B6E, #D82741);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#E84B6E', EndColorStr='#D82741');
+    border: 1px solid #000;
+	font-weight:bold;
+	font-size: 16px;
+	font-family:georgia;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color:#fff;
+	padding:10px;
+	text-align:center;
+	display:block;
+	margin: 10px 0;
+}
+
+#dateloom-page9 .yddl-fail a
+{
+	color:#fff;
+}
+
+div.yddl-event-details { 
+    text-align: left; 
+    padding-top: 10px;
+    max-height: 330px;
+}
+div.yddl-overlay {
+    width:100%;
+    height:100%;
+}
+#yddl-overlay1 { 
+    z-index:1005 
+}
+#yddl-overlay2 { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index:1006; 
+    opacity: 1;
+    background: transparent url(spinner.gif) center center no-repeat;
+}
+
+.ui-dialog.yddl-dialog {
+  -webkit-box-shadow:0 0 18px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 0 18px rgba(0,0,0,0.4);
+  box-shadow:0 0 18px rgba(0,0,0,0.4);
+}
+
+
+.yd-clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+/*.yd-clearfix {display:inline-block;}*/
+
+
+/* @end */
+
+
+
+/* @group qTip2 */
+
+/*! qTip2 v2.0.0 | http://craigsworks.com/projects/qtip2/ | Licensed MIT, GPL */#qtip-rcontainer{position:absolute;left:-28000px;top:-28000px;display:block;visibility:hidden}#qtip-rcontainer .ui-tooltip{display:block!important;visibility:hidden!important;position:static!important;float:left!important}.ui-tooltip,.qtip{position:absolute;left:-28000px;top:-28000px;display:none;max-width:280px;min-width:50px;font-size:10.5px;line-height:12px}.ui-tooltip-content{position:relative;padding:5px 9px;overflow:hidden;text-align:left;word-wrap:break-word}.ui-tooltip-titlebar{position:relative;min-height:14px;padding:5px 35px 5px 10px;overflow:hidden;border-width:0 0 1px;font-weight:700}.ui-tooltip-titlebar+.ui-tooltip-content{border-top-width:0!important}.ui-tooltip-titlebar .ui-state-default{position:absolute;right:4px;top:50%;margin-top:-9px;cursor:pointer;outline:medium none;border-width:1px;border-style:solid}* html .ui-tooltip-titlebar .ui-state-default{top:16px}.ui-tooltip-titlebar .ui-icon,.ui-tooltip-icon .ui-icon{display:block;text-indent:-1000em;direction:ltr}.ui-tooltip-icon,.ui-tooltip-icon .ui-icon{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;text-decoration:none}.ui-tooltip-icon .ui-icon{width:18px;height:14px;text-align:center;text-indent:0;font:normal bold 10px/13px Tahoma,sans-serif;color:inherit;background:transparent none no-repeat -100em -100em}.ui-tooltip-focus{}.ui-tooltip-hover{}.ui-tooltip-default{border-width:1px;border-style:solid;border-color:#F1D031;background-color:#FFFFA3;color:#555}.ui-tooltip-default .ui-tooltip-titlebar{background-color:#FFEF93}.ui-tooltip-default .ui-tooltip-icon{border-color:#CCC;background:#F1F1F1;color:#777}.ui-tooltip-default .ui-tooltip-titlebar .ui-state-hover{border-color:#AAA;color:#111}/*! Light tooltip style */.ui-tooltip-light{background-color:#fff;border-color:#E2E2E2;color:#454545}.ui-tooltip-light .ui-tooltip-titlebar{background-color:#f1f1f1}/*! Dark tooltip style */.ui-tooltip-dark{background-color:#505050;border-color:#303030;color:#f3f3f3}.ui-tooltip-dark .ui-tooltip-titlebar{background-color:#404040}.ui-tooltip-dark .ui-tooltip-icon{border-color:#444}.ui-tooltip-dark .ui-tooltip-titlebar .ui-state-hover{border-color:#303030}/*! Cream tooltip style */.ui-tooltip-cream{background-color:#FBF7AA;border-color:#F9E98E;color:#A27D35}.ui-tooltip-cream .ui-tooltip-titlebar{background-color:#F0DE7D}.ui-tooltip-cream .ui-state-default .ui-tooltip-icon{background-position:-82px 0}/*! Red tooltip style */.ui-tooltip-red{background-color:#F78B83;border-color:#D95252;color:#912323}.ui-tooltip-red .ui-tooltip-titlebar{background-color:#F06D65}.ui-tooltip-red .ui-state-default .ui-tooltip-icon{background-position:-102px 0}.ui-tooltip-red .ui-tooltip-icon{border-color:#D95252}.ui-tooltip-red .ui-tooltip-titlebar .ui-state-hover{border-color:#D95252}/*! Green tooltip style */.ui-tooltip-green{background-color:#CAED9E;border-color:#90D93F;color:#3F6219}.ui-tooltip-green .ui-tooltip-titlebar{background-color:#B0DE78}.ui-tooltip-green .ui-state-default .ui-tooltip-icon{background-position:-42px 0}/*! Blue tooltip style */.ui-tooltip-blue{background-color:#E5F6FE;border-color:#ADD9ED;color:#5E99BD}.ui-tooltip-blue .ui-tooltip-titlebar{background-color:#D0E9F5}.ui-tooltip-blue .ui-state-default .ui-tooltip-icon{background-position:-2px 0}.ui-tooltip-shadow{-webkit-box-shadow:1px 1px 3px 1px rgba(0,0,0,.15);-moz-box-shadow:1px 1px 3px 1px rgba(0,0,0,.15);box-shadow:1px 1px 3px 1px rgba(0,0,0,.15)}.ui-tooltip-rounded,.ui-tooltip-tipsy,.ui-tooltip-bootstrap{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.ui-tooltip-youtube{-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-webkit-box-shadow:0 0 3px #333;-moz-box-shadow:0 0 3px #333;box-shadow:0 0 3px #333;color:#fff;border-width:0;background:#4A4A4A;background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #4A4A4A),color-stop(100%,black));background-image:-webkit-linear-gradient(top, #4A4A4A 0,black 100%);background-image:-moz-linear-gradient(top, #4A4A4A 0,black 100%);background-image:-ms-linear-gradient(top, #4A4A4A 0,black 100%);background-image:-o-linear-gradient(top, #4A4A4A 0,black 100%)}.ui-tooltip-youtube .ui-tooltip-titlebar{background-color:#4A4A4A;background-color:rgba(0,0,0,0)}.ui-tooltip-youtube .ui-tooltip-content{padding:.75em;font:12px arial,sans-serif;filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#4a4a4a, EndColorStr=#000000);-ms-filter:"progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#4a4a4a, EndColorStr=#000000);"}.ui-tooltip-youtube .ui-tooltip-icon{border-color:#222}.ui-tooltip-youtube .ui-tooltip-titlebar .ui-state-hover{border-color:#303030}.ui-tooltip-jtools{background:#232323;background:rgba(0,0,0,.7);background-image:-webkit-gradient(linear,left top,left bottom,from( #717171),to( #232323));background-image:-moz-linear-gradient(top, #717171, #232323);background-image:-webkit-linear-gradient(top, #717171, #232323);background-image:-ms-linear-gradient(top, #717171, #232323);background-image:-o-linear-gradient(top, #717171, #232323);border:2px solid #ddd;border:2px solid rgba(241,241,241,1);-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-webkit-box-shadow:0 0 12px #333;-moz-box-shadow:0 0 12px #333;box-shadow:0 0 12px #333}.ui-tooltip-jtools .ui-tooltip-titlebar{background-color:transparent;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171, endColorstr=#4A4A4A);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#717171, endColorstr=#4A4A4A)"}.ui-tooltip-jtools .ui-tooltip-content{filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A, endColorstr=#232323);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#4A4A4A, endColorstr=#232323)"}.ui-tooltip-jtools .ui-tooltip-titlebar,.ui-tooltip-jtools .ui-tooltip-content{background:transparent;color:#fff;border:0 dashed transparent}.ui-tooltip-jtools .ui-tooltip-icon{border-color:#555}.ui-tooltip-jtools .ui-tooltip-titlebar .ui-state-hover{border-color:#333}.ui-tooltip-cluetip{-webkit-box-shadow:4px 4px 5px rgba(0,0,0,.4);-moz-box-shadow:4px 4px 5px rgba(0,0,0,.4);box-shadow:4px 4px 5px rgba(0,0,0,.4);background-color:#D9D9C2;color:#111;border:0 dashed transparent}.ui-tooltip-cluetip .ui-tooltip-titlebar{background-color:#87876A;color:#fff;border:0 dashed transparent}.ui-tooltip-cluetip .ui-tooltip-icon{border-color:#808064}.ui-tooltip-cluetip .ui-tooltip-titlebar .ui-state-hover{border-color:#696952;color:#696952}.ui-tooltip-tipsy{background:#000;background:rgba(0,0,0,.87);color:#fff;border:0 solid transparent;font-size:11px;font-family:'Lucida Grande',sans-serif;font-weight:700;line-height:16px;text-shadow:0 1px black}.ui-tooltip-tipsy .ui-tooltip-titlebar{padding:6px 35px 0 10;background-color:transparent}.ui-tooltip-tipsy .ui-tooltip-content{padding:6px 10}.ui-tooltip-tipsy .ui-tooltip-icon{border-color:#222;text-shadow:none}.ui-tooltip-tipsy .ui-tooltip-titlebar .ui-state-hover{border-color:#303030}.ui-tooltip-tipped{border:3px solid #959FA9;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background-color:#F9F9F9;color:#454545;font-weight:400;font-family:serif}.ui-tooltip-tipped .ui-tooltip-titlebar{border-bottom-width:0;color:#fff;background:#3A79B8;background-image:-webkit-gradient(linear,left top,left bottom,from( #3A79B8),to( #2E629D));background-image:-webkit-linear-gradient(top, #3A79B8, #2E629D);background-image:-moz-linear-gradient(top, #3A79B8, #2E629D);background-image:-ms-linear-gradient(top, #3A79B8, #2E629D);background-image:-o-linear-gradient(top, #3A79B8, #2E629D);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8, endColorstr=#2E629D);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#3A79B8, endColorstr=#2E629D)"}.ui-tooltip-tipped .ui-tooltip-icon{border:2px solid #285589;background:#285589}.ui-tooltip-tipped .ui-tooltip-icon .ui-icon{background-color:#FBFBFB;color:#555}.ui-tooltip-bootstrap{font-size:14px;line-height:20px;color:#333;padding:1px;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box}.ui-tooltip-bootstrap .ui-tooltip-titlebar{padding:8px 14px;margin:0;font-size:14px;font-weight:400;line-height:18px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;-webkit-border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0}.ui-tooltip-bootstrap .ui-tooltip-titlebar .ui-state-default{right:11px;top:45%;border-style:none}.ui-tooltip-bootstrap .ui-tooltip-content{padding:9px 14px}.ui-tooltip-bootstrap .ui-tooltip-icon{background:transparent}.ui-tooltip-bootstrap .ui-tooltip-icon .ui-icon{width:auto;height:auto;float:right;font-size:20px;font-weight:700;line-height:18px;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}.ui-tooltip-bootstrap .ui-tooltip-icon .ui-icon:hover{color:#000;text-decoration:none;cursor:pointer;opacity:.4;filter:alpha(opacity=40)}.ui-tooltip:not(.ie9haxors) div.ui-tooltip-content,.ui-tooltip:not(.ie9haxors) div.ui-tooltip-titlebar{filter:none;-ms-filter:none}.ui-tooltip .ui-tooltip-tip{margin:0 auto;overflow:hidden;z-index:10}.ui-tooltip .ui-tooltip-tip,.ui-tooltip .ui-tooltip-tip .qtip-vml{position:absolute;line-height:.1px!important;font-size:.1px!important;color:#123456;background:transparent;border:0 dashed transparent}.ui-tooltip .ui-tooltip-tip canvas{top:0;left:0}.ui-tooltip .ui-tooltip-tip .qtip-vml{behavior:url(dateloom-page9.css?v=94);display:inline-block;visibility:visible}#qtip-overlay{position:fixed;left:-10000em;top:-10000em}#qtip-overlay.blurs{cursor:pointer}#qtip-overlay div{position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000;opacity:.7;filter:alpha(opacity=70);-ms-filter:"alpha(Opacity=70)"}
+
+/* @end */
+
+/* @group Base */
+
+/* -- Base -- */
+
+
+.fc-event-title { text-wrap: unrestricted; word-wrap: break-word} /*If text does not fit in event then hide it. CSS3 Only  */
+
+/* reset some stuff */
+
+.fc-event {
+	border-style: none;
+	}
+
+.fc-event-skin {
+	border-color: transparent;     /* default BORDER color */
+	background-color: transparent; /* default BACKGROUND color */
+	color: #fff;            /* default TEXT color */
+	border-width: 0 ;
+	}
+.fc-event-time, .fc-event-title {
+	padding: 0 4px;
+	}
+	
+	
+.fc-event 
+{ 
+	border:1px solid #222;
+}
+
+.fc-event-skin
+{    
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+	background-color: transparent;
+}
+
+.fc-event-skin, .fc-event-skin span
+{    
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+.fc-event:hover{    
+    box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.75);
+}
+
+.fc-event:active
+{    
+/* When pressed, move it down 1px */    
+    position: relative;
+    top: 1px;
+}
+
+.fc-event-head 
+{ 
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/* @end */
+
+/* @group Events */
+
+
+
+/* -- Colors -- */
+
+.event-khaki
+{    
+    background: #A2B598;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BDD1B4), to(#A2B598) );
+    background:-moz-linear-gradient(-90deg, #BDD1B4, #A2B598);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#BDD1B4', EndColorStr='#A2B598');
+    border-color: #A2B598;
+}
+
+.event-khaki:hover
+{       
+    background: #BDD1B4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#A2B598), to(#BDD1B4) );
+    background: -moz-linear-gradient(-90deg, #A2B598, #BDD1B4);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#A2B598', EndColorStr='#BDD1B4');
+}
+
+.event-khaki:active
+{    
+    background: #A2B598;
+}
+
+.event-khaki .fc-event-head 
+{ 
+	background: #A2B598;
+}
+
+/*----------------------------*/
+
+.event-blue
+{    
+    background: #4477a1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
+    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
+    border-color: #4477a1;
+}
+
+.event-blue:hover
+{    
+    background: #81a8cb;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) );
+    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb');
+}
+
+.event-blue:active
+{    
+    background: #4477a1;
+}
+
+.event-blue .fc-event-head 
+{ 
+	background: #4477a1;
+}
+
+/*----------------------------*/
+
+.event-brown
+{    
+    background: #8f3714;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bf6f50), to(#8f3714) );
+    background: -moz-linear-gradient(-90deg, #bf6f50, #8f3714);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#bf6f50', EndColorStr='#8f3714');
+    border-color: #8f3714;
+}
+
+.event-brown:hover
+{    
+    background: #bf6f50;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8f3714), to(#bf6f50) );
+    background: -moz-linear-gradient(-90deg, #8f3714, #bf6f50);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#8f3714', EndColorStr='#bf6f50');
+}
+
+.event-brown:active
+{    
+    background: #8f3714;
+}
+
+.event-brown .fc-event-head 
+{ 
+	background: #8f3714;
+}
+
+/*----------------------------*/
+
+.event-green
+{    
+    background: #428739;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c8dd95), to(#428739) );
+    background: -moz-linear-gradient(-90deg, #c8dd95, #428739);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#c8dd95', EndColorStr='#428739');
+    border-color: #428739;
+}
+
+.event-green:hover
+{    
+    background: #c8dd95;
+    background: -webkit-gradient(linear, left top, left bottom, from(#428739), to(#c8dd95) );
+    background: -moz-linear-gradient(-90deg, #428739, #c8dd95);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#428739', EndColorStr='#c8dd95');
+}
+
+.event-green:active
+{    
+    background: #428739;
+}
+
+.event-green .fc-event-head 
+{ 
+	background: #428739;
+}
+
+/*----------------------------*/
+
+.event-red
+{    
+    background-color: #D82741;
+    background: -webkit-gradient(linear, left top, left bottom, from(#E84B6E), to(#D82741) );
+    background: -moz-linear-gradient(-90deg, #E84B6E, #D82741);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#E84B6E', EndColorStr='#D82741');
+    border-color: #D82741;
+}
+
+.event-red:hover
+{    
+    background-color: #E84B6E;
+    background: -webkit-gradient(linear, left top, left bottom, from(#D82741), to(#E84B6E) );
+    background: -moz-linear-gradient(-90deg, #D82741, #E84B6E);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#D82741', EndColorStr='#E84B6E');
+}
+
+.event-red:active
+{    
+    background-color: #D82741;
+}
+
+.event-red .fc-event-head 
+{ 
+	background: #D82741;
+}
+
+/*----------------------------*/
+
+.event-purple
+{    
+    background: #6F50E7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#B8A9F3), to(#6F50E7) );
+    background: -moz-linear-gradient(-90deg, #B8A9F3, #6F50E7);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#B8A9F3', EndColorStr='#6F50E7');
+    border-color: #6F50E7;
+}
+
+.event-purple:hover
+{    
+    background: #B8A9F3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6F50E7), to(#B8A9F3) );
+    background: -moz-linear-gradient(-90deg, #6F50E7, #B8A9F3);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#6F50E7', EndColorStr='#B8A9F3');
+}
+
+.event-purple:active
+{    
+    background: #6F50E7;
+}
+
+.event-purple .fc-event-head 
+{ 
+	background: #6F50E7;
+}
+
+/*----------------------------*/
+
+.event-black
+{    
+    background: #141414;
+    background: -webkit-gradient(linear, left top, left bottom, from(#656565), to(#141414) );
+    background: -moz-linear-gradient(-90deg, #656565, #141414);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#656565', EndColorStr='#141414');
+    border-color: #141414;
+}
+
+
+.event-black:hover
+{    
+    background: #656565;
+    background: -webkit-gradient(linear, left top, left bottom, from(#141414), to(#656565) );
+    background: -moz-linear-gradient(-90deg, #141414, #656565);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#141414', EndColorStr='#656565');
+}
+
+.event-black:active
+{    
+    background: #141414;
+}
+
+.event-black .fc-event-head 
+{ 
+	background: #141414;
+}
+
+/*----------------------------*/
+
+.event-orange
+{    
+    background: #f09c15;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8c939), to(#f09c15) );
+    background: -moz-linear-gradient(-90deg, #f8c939, #f09c15);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f8c939', EndColorStr='#f09c15');
+    border-color: #f09c15;
+}
+
+.event-orange:hover
+{    
+    background: #f8c939;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f09c15), to(#f8c939) );
+    background: -moz-linear-gradient(-90deg, #f09c15, #f8c939);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f09c15', EndColorStr='#f8c939');
+}
+
+.event-orange:active
+{    
+    background: #f09c15;
+}
+
+.event-orange .fc-event-head 
+{ 
+	background: #f09c15;
+}
+
+/*----------------------------*/
+
+.event-silver
+{    
+    background: #c5c5c5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#c5c5c5) );
+    background: -moz-linear-gradient(-90deg, #eaeaea, #c5c5c5);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#eaeaea', EndColorStr='#c5c5c5');
+    border-color: #c5c5c5;
+}
+
+.event-silver:hover
+{    
+    background: #eaeaea;
+    background: -webkit-gradient(linear, left top, left bottom, from(#c5c5c5), to(#eaeaea) );
+    background: -moz-linear-gradient(-90deg, #c5c5c5, #eaeaea);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#c5c5c5', EndColorStr='#eaeaea');
+}
+
+.event-silver:active
+{    
+    background: #c5c5c5;
+}
+
+.event-silver .fc-event-head 
+{ 
+	background: #c5c5c5;
+}
+
+
+
+
+/*----------------------------*/
+
+.fc-bullet
+{ 
+	width:18px;
+	height:18px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    border-radius: 5px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.fc-view-month .fc-event-time { display:none; } /* hide for now */
+
+
+.detailed-event-header { font-weight:normal; }
+.detailed-event-body { padding:10px 0; }
+.event-title { font-size: large; font-weight:bold; padding:6px 0; }
+
+/* emulate truncating with css */
+.fc-event-title{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display:block;
+}
+
+
+/* @end */
+
+
+
