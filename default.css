@@ -1,0 +1,507 @@
+#everything
+{
+    /* Use 972 pixel width, for image */
+    width: 972px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#bodyheader
+{ 
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #707070;
+    font-family: "Trebuchet MS", Times, serif;
+}
+
+
+#bodyheader h1
+{
+    color: #FFFFFF;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+#bodyheader h3
+{
+    color: #FFFFFF;
+    padding-left: 1.7em;
+    padding-bottom: 0;
+    padding-top: 0.2em;
+    padding-right: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#bodyheader img
+{
+    position: relative;
+    left: 55em;
+    top: -2.6em;
+    margin: -1em;
+    padding: 0.1em;
+    height: 77px;
+    width: 77px;
+}
+
+#topimage
+{
+    height: 245px;  /* whole image is 305px; */
+    padding: 0;
+    margin: 0;
+    background: #aaa url('images/web2cropped.png') no-repeat top left;
+    border-top-style: solid;
+    border-top-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+
+#menu
+{
+    background: #000000;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#menu ul
+{
+    margin: 0;
+    padding: 0;
+    padding-left: 1.2em;
+}
+
+#menu ul li
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5em;
+    padding-right: 0.4em;
+    font-family: "Trebuchet MS", serif;
+    font-size: 12pt;
+}
+
+#menu ul li a
+{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#contents
+{
+    background-color: #FFFFFF;
+    height: 27em;
+    margin: 0;
+    padding: 0;
+}
+
+#contents #leftimage img
+{
+    width: 345px;
+    height: 259px;
+    float: left;
+    padding-top: 4em;
+    padding-left: 6em;
+    padding-right: 3em;
+    padding-bottom: 2em;
+}
+
+
+#contents #contactimage img
+{
+    width: 345px;
+    height: 259px;
+    float: left;
+    padding-top: 1em;
+    padding-left: 10em;
+    padding-right: 4em;
+}
+
+#contents #textcontents
+{
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 5em;
+    padding-bottom: 0;
+    padding-right: 3em;
+}
+
+
+#contents #textcontents p
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2em;
+}
+
+#contents #contactcontents
+{
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 2em;
+    padding-bottom: 0;
+    padding-right: 3em;
+}
+
+
+#contents #contactcontents p
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2em;
+}
+
+#contents #rightfooter
+{
+    font-family: "Trebuchet MS", serif;
+    font-size: 9pt;
+    font-style: italic;
+    padding-top: 10em;
+    text-align: right;
+    padding-right: 3.5em;
+}
+
+#contact p
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 3em;
+}
+
+#papercontents
+{
+    background-color: #FFFFFF;
+    height: 7300px;
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 2em;
+    padding-bottom: 0;
+    padding-right: 6em;
+    padding-left: 6em;
+}
+
+#papercontents #header
+{
+    width: 700px;
+    text-align: center;
+    padding-left: 3.5em;
+}
+
+#papercontents #header #title
+{
+    font-size: 15pt;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+#papercontents #header #author
+{
+    font-size: 13pt;
+    padding-bottom: 1.3em;
+}
+
+div.subheading
+{
+    font-size: 13pt;
+    font-weight: bolder;
+    padding-bottom: 0.9em;
+}
+
+div.legend
+{
+    font-style: italic;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+div.figure
+{
+    padding-bottom: 2em;
+}
+
+div.figure img
+{
+    border-width: thin;
+    border-color: #000000;
+}
+
+#publicationcontents
+{
+    background-color: #FFFFFF;
+    margin: 0;
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 2em;
+    padding-bottom: 0;
+    padding-right: 4em;
+    padding-left: 3em;
+}
+
+span.italic
+{
+    font-style: italic;
+}
+
+span.bold
+{
+    font-weight: bold;
+}
+
+div.pageid
+{
+    font-size: 17pt;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+
+div.title
+{
+    padding-top: 2em;
+    padding-left: 2em;
+}
+
+div.title a
+{
+    font-size: 13pt;
+}
+
+div.authors
+{
+    padding-left: 3em;
+}
+
+div.paperlinks
+{
+    padding-left: 3em;
+}
+
+#contactheading
+{
+    font-size: 17pt;
+    font-weight: bold;
+    padding-bottom: -2em;
+    padding-top: 1.5em;
+    padding-left: 2em;
+    font-family: "Trebuchet MS", serif;
+}
+
+#cvcontents
+{
+    background-color: #FFFFFF;
+    margin: 0;
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-right: 4em;
+    padding-left: 3em;
+}
+
+div.cvheading
+{
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 0.8em;
+    font-size: 13pt;
+    font-style: italic;
+    font-weight: bold;
+}
+
+div.hrule hr
+{
+   height: 2px;
+   color: #7C7980;
+   background-color: #7C7980;
+   border: none;
+}
+
+div.cvleft
+{
+    float:left;
+    width: 70%;
+    padding-bottom: 1.4em;
+}
+
+div.cvright
+{
+    text-align: right;
+    font-weight: bold;
+}
+
+div.singlecolumn
+{
+    padding-left: 3.5em;
+    padding-bottom: 1em;
+    margin: 0;
+}
+
+th.cvleftcolumn
+{
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    width: 42em;
+    padding-bottom: 1em;
+}
+
+th.cvrightcolumn
+{
+    text-align: right;
+    padding-left: 3em;
+    vertical-align: top;
+    padding-bottom: 1em;
+}
+
+div.pricecolumn
+{
+    padding-left: 3.5em;
+    margin: 0;
+}
+
+div.presentationcolumn
+{
+    padding-left: 2.0em;
+    padding-right: 1.5em;
+    margin: 0;
+}
+
+div.presentationcolumn li
+{
+    padding-bottom: 0.7em;
+}
+
+body
+{
+    background-color: #D6CFAE;
+}
+
+#researchcontents
+{
+    background-color: #FFFFFF;
+    font-family: "Trebuchet MS", serif;
+    font-size: 11pt;
+    padding-top: 2em;
+    padding-bottom: 0;
+    padding-right: 4em;
+    padding-left: 3em;
+}
+
+.researchheading
+{
+    padding-top: 1.5em;
+    padding-left: 0em;
+    padding-bottom: 1em;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+img.rightimage
+{
+    float: right;
+    clear: left;
+}
+
+.rightresearchcolumn
+{
+    text-align: right;
+}
+
+.leftresearchcolumn
+{
+    vertical-align: top;
+    padding-right: 1.5em;    
+}
+
+.pictures.rightresearchcolumn
+{
+    padding-top: 0em;
+}
+
+.pollution.leftresearchcolumn
+{
+    padding-top: 0em;
+}
+
+.pollution.rightresearchcolumn
+{
+    padding-top: 0em;
+    vertical-align: top;
+}
+
+.pulsationcolumn.rightresearchcolumn
+{
+    padding-top: 0em;
+    vertical-align: top;
+}
+
+.researchcaption
+{
+    text-align: left;
+}
+
+p.researchtext
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+p.researchpicture
+{
+    margin-left: 15%;
+    margin-right: 20%;
+}
+
+.researchtopic
+{
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+#linkscontents
+{
+    background-color: #FFFFFF;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 3em;
+}
+
+.linksheading
+{
+    font-weight: bold;
+    padding-top: 0.9em;
+}
+
+#linkstable
+{
+    margin-left: 2em;
+}
+
+#pulsationimage
+{
+    float: right;
+    padding-left: 1.4em;
+    padding-bottom: 1em;
+}
+
+#pulsationtext
+{
+    padding-top: 1em;
+}
