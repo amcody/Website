@@ -1,0 +1,16 @@
+
+/* Fixed Width Option */
+
+.ui-tabs .ui-tabs-nav li {
+	width: 170px;
+}
+
+#tabloom  #tabs, #tabloom  #tabs ul.ui_tabs {
+	width: 820px;
+}
+
+	
+	
+
+/* CSS Override Styling */
+
